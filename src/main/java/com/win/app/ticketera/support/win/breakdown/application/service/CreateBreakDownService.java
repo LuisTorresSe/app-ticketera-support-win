@@ -3,7 +3,9 @@ package com.win.app.ticketera.support.win.breakdown.application.service;
 import com.win.app.ticketera.support.win.breakdown.application.port.in.CreateBreakDownCommand;
 import com.win.app.ticketera.support.win.breakdown.application.port.in.CreateBreakDownState;
 import com.win.app.ticketera.support.win.breakdown.application.port.in.CreateBreakDownUseCase;
+import com.win.app.ticketera.support.win.breakdown.application.port.out.BreakDownMapperState;
 import com.win.app.ticketera.support.win.breakdown.application.port.out.BreakDownPort;
+import com.win.app.ticketera.support.win.breakdown.domain.BreakDown;
 import com.win.app.ticketera.support.win.client.application.exception.ClientsNotFound;
 import com.win.app.ticketera.support.win.client.application.port.out.ClientPort;
 import com.win.app.ticketera.support.win.subticket.application.exception.NotFoundSubticket;
@@ -40,9 +42,8 @@ public class CreateBreakDownService implements CreateBreakDownUseCase {
                 ()-> new NotFoundSubticket("Subticket not found with id: " + subticketId)
         );
 
-        CreateBreakDownState createBreakDownState = breakDownPort.createBreakDown(breakDownCommand);
+        BreakDown newBreakDown = breakDownPort.createBreakDown(breakDownCommand);
 
-
-        return createBreakDownState;
+        return BreakDownMapperState.createBreakDownState(newBreakDown);
     }
 }

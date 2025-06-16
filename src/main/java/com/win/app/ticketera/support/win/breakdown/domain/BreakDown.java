@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 
 @Data
 public class BreakDown {
+    Long breakDownId;
     Client client;
     Subticket subticket;
     Duration fallTime;

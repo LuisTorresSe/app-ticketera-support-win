@@ -4,8 +4,6 @@ import com.win.app.ticketera.support.win.utils.SelfValidating;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 
-import java.time.Duration;
-
 @Getter
 public class CreateBreakDownCommand  extends SelfValidating<CreateBreakDownCommand> {
     @NotBlank
@@ -14,14 +12,11 @@ public class CreateBreakDownCommand  extends SelfValidating<CreateBreakDownComma
     @NotBlank
     private final Long subticketId;
 
-    private final Duration falltime;
-
     private final String breakDownStatus;
 
-    public CreateBreakDownCommand(Long clientId, Long subticketId, Duration falltime, String breakDownStatus) {
+    public CreateBreakDownCommand(Long clientId, Long subticketId, String breakDownStatus) {
         this.clientId = clientId;
         this.subticketId = subticketId;
-        this.falltime = falltime;
         this.breakDownStatus = breakDownStatus;
         this.validateSelf();
     }

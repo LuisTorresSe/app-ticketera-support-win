@@ -1,4 +1,4 @@
-package com.win.app.ticketera.support.win.subticket.domain;
+package com.win.app.ticketera.support.win.ticket.domain;
 
 public enum Type {
     PROACTIVO,
