@@ -4,6 +4,8 @@ import com.win.app.ticketera.support.win.ticket.application.port.in.CreateTicket
 import com.win.app.ticketera.support.win.ticket.application.port.out.TicketPort;
 import com.win.app.ticketera.support.win.ticket.domain.Ticket;
 
+import java.util.Optional;
+
 public class TicketPersistenceAdapter implements TicketPort {
     private final TicketRepository ticketRepository;
 
@@ -22,5 +24,10 @@ public class TicketPersistenceAdapter implements TicketPort {
     public Ticket update(Ticket ticket) {
         TicketJpaEntity saveTicket =  ticketRepository.save(TicketMapper.toJpa(ticket));
         return TicketMapper.toDomain(saveTicket);
+    }
+
+    @Override
+    public Optional<Ticket> findById(Long id) {
+        return Optional.empty();
     }
 }

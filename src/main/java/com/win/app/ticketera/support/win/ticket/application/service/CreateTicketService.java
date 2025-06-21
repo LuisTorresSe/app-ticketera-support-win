@@ -6,10 +6,11 @@ import com.win.app.ticketera.support.win.ticket.application.port.out.CreateTicke
 import com.win.app.ticketera.support.win.ticket.application.port.out.TicketPort;
 import com.win.app.ticketera.support.win.ticket.domain.Ticket;
 import jakarta.transaction.Transactional;
-import org.springframework.stereotype.Component;
+
+import org.springframework.stereotype.Service;
 
 @Transactional
-@Component
+@Service
 public class CreateTicketService implements CreateTicketUseCase {
 
     private final TicketPort ticketPort;
@@ -32,7 +33,6 @@ public class CreateTicketService implements CreateTicketUseCase {
         saveTicket.setCodeTicket(codeTicketFormat);
 
         Ticket updateTicket = ticketPort.update(saveTicket);
-
 
         CreateTicketState createTicketState = new CreateTicketState();
         createTicketState.setTicketCode(updateTicket.getCodeTicket());

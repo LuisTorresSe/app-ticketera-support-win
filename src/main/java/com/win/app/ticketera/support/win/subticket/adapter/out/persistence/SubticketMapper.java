@@ -31,7 +31,7 @@ public class SubticketMapper {
         domain.setStopWork(entity.getStopWork());
         domain.setTimeEvent(entity.getTimeEvent());
         domain.setTimeAffected(entity.getTimeAffected());
-        domain.setTimeSolutionsEvent(entity.getTimeSolutionsEvent());
+        domain.setTimeSolutionsEventPext(entity.getTimeSolutionsEventPext());
         domain.setTimeReportPext(entity.getTimeReportPext());
 
         /* — campos misceláneos — */
@@ -74,7 +74,7 @@ public class SubticketMapper {
         entity.setStopWork(domain.getStopWork());
         entity.setTimeEvent(domain.getTimeEvent());
         entity.setTimeAffected(domain.getTimeAffected());
-        entity.setTimeSolutionsEvent(domain.getTimeSolutionsEvent());
+        entity.setTimeSolutionsEventPext(domain.getTimeSolutionsEventPext());
         entity.setTimeReportPext(domain.getTimeReportPext());
         entity.setUnavailability(domain.getUnavailability());
         entity.setNodeAffected(domain.getNodeAffected());

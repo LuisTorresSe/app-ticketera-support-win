@@ -38,7 +38,7 @@ public class SubticketJpaEntity {
     private Duration stopWork;
     private Duration timeEvent;
     private Duration timeAffected;
-    private Duration timeSolutionsEvent;
+    private Duration timeSolutionsEventPext;
     private Duration timeReportPext;
 
     private Boolean unavailability;

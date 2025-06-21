@@ -1,28 +1,18 @@
-package com.win.app.ticketera.support.win.subticket.domain;
+package com.win.app.ticketera.support.win.subticket.application.port.in;
 
 import com.win.app.ticketera.support.win.breakdown.domain.BreakDown;
-import com.win.app.ticketera.support.win.managerAt.domain.ManagerAt;
+import com.win.app.ticketera.support.win.subticket.domain.Diagnosis;
+import com.win.app.ticketera.support.win.subticket.domain.Report;
 import com.win.app.ticketera.support.win.ticket.domain.Ticket;
-import com.win.app.ticketera.support.win.ticket.domain.Type;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
 
 import java.time.Duration;
 import java.time.LocalDateTime;
-import java.util.Set;
-import java.util.UUID;
 
-@Data
 @Builder
-@AllArgsConstructor
-@NoArgsConstructor
-public class Subticket {
 
+public class CreateSubticketState {
     private Long subticketId;
     private String subticketCode;
     private String managerAt;
@@ -56,24 +46,5 @@ public class Subticket {
     private String status;
     private String commentary;
     private String responsable;
-    private Set<BreakDown> breakDowns;
     private Ticket ticket;
-
-
-    private void calculateTimeWork(){
-            setStopWork(Duration.between(dateStartLabores,dateStopLabores));
-    }
-
-    private void calculateTimeEvent(){
-            setTimeEvent(Duration.between( createAtEvent,endAtEvent));
-    }
-
-
-    private void calculateTimeSolutionsEventPext(){
-        setTimeSolutionsEventPext(Duration.between(reportPext,endAtEvent));
-    }
-    private void calculateTimeReportPext(){
-        setTimeReportPext(Duration.between(createAtEvent,reportPext));
-    }
-
 }

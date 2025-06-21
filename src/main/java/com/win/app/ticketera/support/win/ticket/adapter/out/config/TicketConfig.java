@@ -17,8 +17,11 @@ public class TicketConfig {
     }
 
     @Bean
-    public CreateTicketUseCase getCreateTicketUseCase(TicketPort ticketPort) {
+    public CreateTicketUseCase createTicketUseCase(TicketPort ticketPort) {
         return new CreateTicketService(ticketPort);
     }
+
+
+
 
 }

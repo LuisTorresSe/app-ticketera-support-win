@@ -3,7 +3,7 @@ package com.win.app.ticketera.support.win.breakdown.application.service;
 import com.win.app.ticketera.support.win.breakdown.application.port.in.CreateBreakDownCommand;
 import com.win.app.ticketera.support.win.breakdown.application.port.in.CreateBreakDownState;
 import com.win.app.ticketera.support.win.breakdown.application.port.in.CreateBreakDownUseCase;
-import com.win.app.ticketera.support.win.breakdown.application.port.out.BreakDownMapperState;
+import com.win.app.ticketera.support.win.breakdown.application.port.in.BreakDownMapperState;
 import com.win.app.ticketera.support.win.breakdown.application.port.out.BreakDownPort;
 import com.win.app.ticketera.support.win.breakdown.domain.BreakDown;
 import com.win.app.ticketera.support.win.client.application.exception.ClientsNotFound;

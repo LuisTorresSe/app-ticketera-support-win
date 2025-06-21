@@ -14,11 +14,14 @@ public class TicketMapper {
         ticket.setType(ticketJpaEntity.getType());
         ticket.setCodeTicket(ticketJpaEntity.getTicketCode());
 
-        ticket.setSubTickets(
-                ticketJpaEntity.getSubtickets().stream().map(
-                        subticketJpaEntity -> SubticketMapper.toDomain(subticketJpaEntity)
-                ).collect(Collectors.toSet())
-        );
+        if(ticketJpaEntity.getSubtickets() != null){
+            ticket.setSubTickets(
+                    ticketJpaEntity.getSubtickets().stream().map(
+                            subticketJpaEntity -> SubticketMapper.toDomain(subticketJpaEntity)
+                    ).collect(Collectors.toSet())
+            );
+        }
+
 
         return ticket;
     }
@@ -28,10 +31,13 @@ public class TicketMapper {
         ticketJpaEntity.setType(ticket.getType());
         ticketJpaEntity.setTicketCode(ticket.getCodeTicket());
         ticketJpaEntity.setTicketId(ticket.getTicketId());
-        ticketJpaEntity.setSubtickets(
-                ticket.getSubTickets().stream().map(subticket->SubticketMapper.toJpa(subticket)
-                ).collect(Collectors.toSet())
-        );
+        if(ticketJpaEntity.getSubtickets() != null){
+            ticketJpaEntity.setSubtickets(
+                    ticket.getSubTickets().stream().map(subticket->SubticketMapper.toJpa(subticket)
+                    ).collect(Collectors.toSet())
+            );
+        }
+
         return ticketJpaEntity;
     }
 }
