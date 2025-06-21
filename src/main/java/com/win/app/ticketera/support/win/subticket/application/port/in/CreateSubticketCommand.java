@@ -4,6 +4,8 @@ import com.win.app.ticketera.support.win.breakdown.application.port.in.CreateBre
 import com.win.app.ticketera.support.win.breakdown.domain.BreakDown;
 import com.win.app.ticketera.support.win.subticket.domain.Diagnosis;
 import com.win.app.ticketera.support.win.subticket.domain.Report;
+import com.win.app.ticketera.support.win.subticket.domain.StatusSubticket;
+import lombok.Builder;
 import lombok.Data;
 
 import java.time.Duration;
@@ -11,6 +13,7 @@ import java.time.LocalDateTime;
 import java.util.Set;
 
 @Data
+@Builder
 public class CreateSubticketCommand {
 
     private Long ticketId;
@@ -43,7 +46,7 @@ public class CreateSubticketCommand {
     private Boolean badPraxis;
     private String solutions;
     private String closeTicketmasterAt;
-    private String status;
+    private StatusSubticket status;
     private String commentary;
     private String responsable;
     private Set<CreateBreakDownCommand> breakDownCommands ;

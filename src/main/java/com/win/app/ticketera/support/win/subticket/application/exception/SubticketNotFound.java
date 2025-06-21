@@ -1,7 +1,7 @@
 package com.win.app.ticketera.support.win.subticket.application.exception;
 
-public class NotFoundSubticket extends RuntimeException {
-    public NotFoundSubticket(String message) {
+public class SubticketNotFound extends RuntimeException {
+    public SubticketNotFound(String message) {
         super(message);
     }
 }

@@ -40,6 +40,7 @@ public class CreateTicketService implements CreateTicketUseCase {
         createTicketState.setTicketCode(updateTicket.getCodeTicket());
         createTicketState.setType(updateTicket.getType());
 
+
     return createTicketState;
     }
 }

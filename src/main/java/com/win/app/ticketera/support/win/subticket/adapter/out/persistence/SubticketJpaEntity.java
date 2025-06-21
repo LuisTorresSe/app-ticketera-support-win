@@ -3,6 +3,7 @@ package com.win.app.ticketera.support.win.subticket.adapter.out.persistence;
 import com.win.app.ticketera.support.win.breakdown.adapter.out.persistence.BreakDownJpaEntity;
 import com.win.app.ticketera.support.win.subticket.domain.Diagnosis;
 import com.win.app.ticketera.support.win.subticket.domain.Report;
+import com.win.app.ticketera.support.win.subticket.domain.StatusSubticket;
 import com.win.app.ticketera.support.win.ticket.adapter.out.persistence.TicketJpaEntity;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -54,7 +55,8 @@ public class SubticketJpaEntity {
     private Boolean badPraxis;
     private String solutions;
     private String closeTicketmasterAt;
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private StatusSubticket status;
     private String commentary;
 
     @OneToMany(mappedBy = "subticket", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)

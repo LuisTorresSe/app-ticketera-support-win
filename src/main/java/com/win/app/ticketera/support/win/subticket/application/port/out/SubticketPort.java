@@ -4,6 +4,7 @@ import com.win.app.ticketera.support.win.subticket.domain.Subticket;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 public interface SubticketPort {
 
@@ -13,4 +14,5 @@ public interface SubticketPort {
 
     Optional<List<Subticket>> getSubticketByTicketId(Long ticketId);
 
+    Set<Subticket> getSubticketByCtoAndStatusPending(String cto);
 }

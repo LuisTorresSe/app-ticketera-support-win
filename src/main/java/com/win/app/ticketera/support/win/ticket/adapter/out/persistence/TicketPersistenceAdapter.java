@@ -17,6 +17,9 @@ public class TicketPersistenceAdapter implements TicketPort {
     public Ticket save(Ticket ticket) {
 
         TicketJpaEntity saveTicket =  ticketRepository.save(TicketMapper.toJpa(ticket));
+
+
+
         return TicketMapper.toDomain(saveTicket);
     }
 
@@ -28,6 +31,9 @@ public class TicketPersistenceAdapter implements TicketPort {
 
     @Override
     public Optional<Ticket> findById(Long id) {
-        return Optional.empty();
+        System.out.println("esto es el id de ticket "+ id);
+        return ticketRepository.findById(id)
+                .map(TicketMapper::toDomainWithoutSubticket);
     }
+
 }

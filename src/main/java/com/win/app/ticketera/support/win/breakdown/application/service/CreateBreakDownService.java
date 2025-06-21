@@ -8,7 +8,7 @@ import com.win.app.ticketera.support.win.breakdown.application.port.out.BreakDow
 import com.win.app.ticketera.support.win.breakdown.domain.BreakDown;
 import com.win.app.ticketera.support.win.client.application.exception.ClientsNotFound;
 import com.win.app.ticketera.support.win.client.application.port.out.ClientPort;
-import com.win.app.ticketera.support.win.subticket.application.exception.NotFoundSubticket;
+import com.win.app.ticketera.support.win.subticket.application.exception.SubticketNotFound;
 import com.win.app.ticketera.support.win.subticket.application.port.out.SubticketPort;
 
 import org.springframework.transaction.annotation.Transactional;
@@ -39,7 +39,7 @@ public class CreateBreakDownService implements CreateBreakDownUseCase {
         );
 
         subticketPort.getSubticketById(subticketId).orElseThrow(
-                ()-> new NotFoundSubticket("Subticket not found with id: " + subticketId)
+                ()-> new SubticketNotFound("Subticket not found with id: " + subticketId)
         );
 
         BreakDown newBreakDown = breakDownPort.createBreakDown(breakDownCommand);

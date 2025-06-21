@@ -53,7 +53,7 @@ public class Subticket {
     private Boolean badPraxis;
     private String solutions;
     private String closeTicketmasterAt;
-    private String status;
+    private StatusSubticket statusSubticket;
     private String commentary;
     private String responsable;
     private Set<BreakDown> breakDowns;
